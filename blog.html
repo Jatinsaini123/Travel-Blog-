@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Blog - Blog</title>
+  <style>
+/* Navbar container */
+.navbar {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Nav menu - desktop */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active-link {
+  color: #ffc107; /* highlight color */
+}
+
+/* Hamburger menu icon - hidden on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Responsive styles - mobile */
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav menu offscreen by default */
+  .nav-list {
+    position: fixed;
+    top: 60px; /* height of navbar */
+    right: -100%;
+    width: 220px;
+    height: 100vh;
+    background-color: #007bff;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 2000;
+  }
+
+  /* Show nav menu when active */
+  .nav-list.active {
+    right: 0;
+  }
+
+  /* Make links larger and stacked */
+  .nav-list li a {
+    font-size: 1.2rem;
+  }
+}
+
+
+    .blog-section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.blog-section h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 2rem;
+}
+
+/* Each blog post container */
+.blog-post {
+  display: flex;
+  background: white;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 1rem 2rem;
+  text-align: left;
+  flex: 1;
+}
+
+.post-content h2 {
+  color: #f7a600;
+  margin-bottom: 0.5rem;
+}
+
+.post-content p {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.post-content .btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .blog-post {
+    flex-direction: column;
+  }
+
+  .blog-post img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .post-content {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Travel Blog</div>
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="blog.html" class="active-link">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Blog Section -->
+  <main>
+    <section class="blog-section">
+      <h1>Travel Stories & Tips</h1>
+
+      <article class="blog-post">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Packing Tips" />
+        <div class="post-content">
+          <h2>Packing Like a Pro: Essential Tips for Every Trip</h2>
+          <p>Learn how to pack efficiently and smartly for any type of travel, whether a weekend getaway or a long vacation.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-post">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach Travel" />
+        <div class="post-content">
+          <h2>Top 5 Beach Destinations You Can't Miss</h2>
+          <p>Discover the most breathtaking beaches around the world that are perfect for your next holiday.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-post">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="City Adventures" />
+        <div class="post-content">
+          <h2>City Adventures: Exploring Urban Landscapes</h2>
+          <p>Explore tips for making the most of your city trips, from hidden gems to must-see landmarks.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Travel Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
+  
+</body>
+</html>

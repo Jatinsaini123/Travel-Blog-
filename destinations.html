@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Blog - Destinations</title>
+  <style>
+    /* Destinations Page */
+
+    /* Navbar container */
+.navbar {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Nav menu - desktop */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active-link {
+  color: #ffc107; /* highlight color */
+}
+
+/* Hamburger menu icon - hidden on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Responsive styles - mobile */
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav menu offscreen by default */
+  .nav-list {
+    position: fixed;
+    top: 60px; /* height of navbar */
+    right: -100%;
+    width: 220px;
+    height: 100vh;
+    background-color: #007bff;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 2000;
+  }
+
+  /* Show nav menu when active */
+  .nav-list.active {
+    right: 0;
+  }
+
+  /* Make links larger and stacked */
+  .nav-list li a {
+    font-size: 1.2rem;
+  }
+}
+
+
+.destinations-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.destinations-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #007bff;
+}
+
+/* Grid container for cards */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Each destination card */
+.destination-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover,
+.destination-card:focus {
+  transform: translateY(-5px);
+  outline: none;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-card h2 {
+  color: #f7a600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.destination-card p {
+  padding: 0 1rem 1rem 1rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Responsive: Stack cards on small screens */
+@media (max-width: 768px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Travel Blog</div>
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html" class="active-link">Destinations</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Destinations Section -->
+  <main>
+    <section class="destinations-page">
+      <h1>Explore Our Destinations</h1>
+      <div class="destinations-grid">
+
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris, France" />
+          <h2>Paris, France</h2>
+          <p>Discover the city of love, with iconic landmarks like the Eiffel Tower and Louvre Museum.</p>
+        </article>
+
+        <article class="destination-card">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/2a/c7/90/94/caption.jpg" alt="Bali, Indonesia" />
+          <h2>Bali, Indonesia</h2>
+          <p>Enjoy stunning beaches, tropical forests, and vibrant local culture in this paradise island.</p>
+        </article>
+
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="New York, USA" />
+          <h2>New York, USA</h2>
+          <p>The city that never sleeps offers world-class entertainment, food, and skyline views.</p>
+        </article>
+
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1526779259212-6fcf5ec57a42" alt="Tokyo, Japan" />
+          <h2>Tokyo, Japan</h2>
+          <p>A fascinating blend of ultra-modern life and traditional temples, rich in culture and tech.</p>
+        </article>
+
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Sydney, Australia" />
+          <h2>Sydney, Australia</h2>
+          <p>Explore beautiful beaches, the iconic Opera House, and vibrant arts and food scenes.</p>
+        </article>
+
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="Rome, Italy" />
+          <h2>Rome, Italy</h2>
+          <p>Walk through history with ancient ruins, beautiful piazzas, and mouthwatering cuisine.</p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Travel Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

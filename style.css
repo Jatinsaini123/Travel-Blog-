@@ -1,0 +1,212 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Navbar */
+.navbar {
+  background: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger menu hidden on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  padding: 0 1rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background: #ffc107;
+  color: #333;
+  padding: 0.75rem 2rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #e0a800;
+}
+
+/* Featured Destinations */
+.featured {
+  padding: 2rem;
+  text-align: center;
+}
+
+.featured h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.destinations {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.destination {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.destination:hover {
+  transform: translateY(-5px);
+}
+
+.destination img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.destination h3 {
+  margin: 1rem 0 0.5rem 0;
+  color: #007bff;
+}
+
+.destination p {
+  padding: 0 1rem 1rem 1rem;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Styles for max-width 768px */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav by default on mobile */
+  .nav-list {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    background: #007bff;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 200;
+  }
+
+  /* Show nav when active */
+  .nav-list.active {
+    right: 0;
+  }
+
+  /* Stack destinations vertically */
+  .destinations {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination {
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  /* Shrink hero text */
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  /* Smaller button */
+  .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

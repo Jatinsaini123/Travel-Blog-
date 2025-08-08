@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Blog - Mobile Friendly</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Travel Blog</div>
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach View" />
+      <div class="hero-text">
+        <h1>Explore the World</h1>
+        <p>Discover amazing places and tips for your next adventure!</p>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </section>
+
+    <section class="featured">
+      <h2>Featured Destinations</h2>
+      <div class="destinations">
+        <div class="destination">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris" />
+          <h3>Paris</h3>
+          <p>The city of love and lights.</p>
+        </div>
+        <div class="destination">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/2a/c7/90/94/caption.jpg" alt="Bali" />
+          <h3>Bali</h3>
+          <p>Beautiful beaches and culture.</p>
+        </div>
+        <div class="destination">
+          <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="New York" />
+          <h3>New York</h3>
+          <p>The city that never sleeps.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Travel Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle script
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
